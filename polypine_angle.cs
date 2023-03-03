@@ -75,4 +75,22 @@
             dirLen.Clear();
         }
         
+        private double Distance2Points(double p1x, double p1y, double p2x, double p2y)
+        {
+            return Math.Round(Math.Sqrt(Math.Pow((p1x - p2x), 2) + Math.Pow((p1y - p2y), 2)), 1);
+        }
+
+        private double AngleLineCCW(double x1, double y1, double x2, double y2)
+        {
+            double angle;
+            if (x1 >= x2)
+                angle =  Math.Atan2(y2 - y1, x2 - x1) * 180.0 / Math.PI;
+            else
+                angle = Math.Atan2(y1 - y2, x1 - x2) * 180.0 / Math.PI;
+
+            if (angle < 0.0) angle += 360.0;
+            return angle;
+        }
+
+
         
